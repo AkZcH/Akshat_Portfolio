@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:wght@700&display=swap');
+
 :root {
   --primary-color: #480ca8;
   --secondary-color: #ffffff; 
@@ -86,7 +88,7 @@ body {
   width: 100%;
   height: 50px;
   position: absolute;
-  top: 40px;
+  /* top: 40px; */
   z-index: 10; /* Ensure the navbar is above other elements */
 }
 
@@ -94,7 +96,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 0px 20px;
 }
 
 .nav-links {
@@ -102,13 +104,14 @@ body {
   justify-content: center;
   align-items: center; /* Vertically centers items */
   list-style: none;
-  padding: 10px 20px;
+  padding: 0px 20px;
   margin: 0;
-  background-color: rgba(255, 255, 255, 0.1);
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  background-color: transparent;
   backdrop-filter: blur(10px);
   border-radius: 50px; /* Creates an ovular shape for the navbar */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  /* border: 1px solid rgba(255, 255, 255, 0.3); */
 }
 
 .nav-links li {
@@ -119,10 +122,12 @@ body {
   text-decoration: none;
   color: white;
   font-size: 16px;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   padding: 10px 20px; /* Adjust padding for vertical alignment */
   height: 100%; /* Ensures it spans the full height of the navbar */
   display: flex; /* Enables centering */
+
   align-items: center; /* Vertically centers the text */
   justify-content: center; /* Horizontally centers the text */
   position: relative;
@@ -883,7 +888,7 @@ section.gamer-card {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: black;
+  background-image:url('Untitled\ design\ \(10\).png');
   color: white;
 }
 
