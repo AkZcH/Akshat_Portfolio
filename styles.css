@@ -278,13 +278,18 @@ header {
 }
 
 .hero {
-  margin-left: 20%;
+  /* Remove margin-left and use auto margins for horizontal centering */
+  margin: 0 auto;
   text-align: center;
   padding: 100px 20px;
   max-width: 800px;
   height: 100vh;
-  margin-top: 5vh;
+  /* Use flexbox for vertical and horizontal centering */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  /* Remove margin-top */
 }
 
 .hero .name {
