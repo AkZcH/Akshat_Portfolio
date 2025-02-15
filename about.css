@@ -49,6 +49,8 @@ p {
 .quote {
     font-style: italic;
     color: #aaa;
+    text-align: right;
+    margin-right: 5rem;
 }
 
 .building {
@@ -138,25 +140,25 @@ p {
 /* BIO SECTION */
 .bio-section {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 40px;
     padding: 80px 5%;
     color: white;
-    width: 90%; /* Changed from 100% to 90% */
+    width: 90%;
     max-width: 1200px;
-    margin: 0 auto; /* Center the container */
+    margin: 0 auto;
     box-sizing: border-box;
 }
 
 /* IMAGE STYLING */
 .bio-image-container {
-    flex: 0 1 350px;
+    flex: 0 1 30%;
     display: flex;
     justify-content: flex-start;
     order: 1;
+    margin-top: 10rem;
 }
 
 .bio-image-container img {
@@ -169,9 +171,10 @@ p {
 /* CONTENT STYLING */
 .bio-section .about-content {
     flex: 1;
-    max-width: 600px;
+    max-width: 65%;
     order: 2;
     text-align: left;
+    margin-left: 20px;
 }
 
 .bio-section .about-content h1 {
