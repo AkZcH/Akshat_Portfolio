@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:wght@700&display=swap');
 
 :root {
-  --primary-color: #480ca8;
-  --secondary-color: #ffffff; 
+  /* --primary-color: #480ca8;
+  --secondary-color: #ffffff;  */
+  --primary-color:   #00bfff;
+  --secondary-color:   #00bfff; 
   --dark-color: #000000;
   --light-color: #121212; 
   --text-color: #ffffff; 
@@ -55,32 +57,51 @@ body {
 }
 
 /* Brand Logo Container */
-.brand-logo-container {
-  width: 60px; /* Set the desired size of the logo */
-  height: 60px;
+.brand-logo {
   display: flex;
-  align-items: center; /* Centers the image within the container */
-  justify-content: center;
-  background-color: rgba(255, 255, 255, 0.1); /* Optional: Background for logo container */
-  border-radius: 50%; /* Makes the container circular */
-  overflow: hidden; /* Ensures the image fits within the circle */
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
-  box-shadow: 0 0 0 rgba(255, 165, 0, 0); /* Initial shadow for the glow effect */
+  align-items: center;
+  padding-left: 2rem;
 }
 
-/* Glow effect on hover for the logo container */
+.brand-logo-container {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 0 rgba(255, 165, 0, 0);
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
 .brand-logo-container:hover {
-  box-shadow: 0 0 5px #ff6a00, 0 0 10px #ff6a00, 0 0 30px #ee0979, 0 0 20px #ee0979; /* Glowing effect */
-  transform: scale(1.1); /* Slight scaling for emphasis */
+  transform: scale(1.1);
+}
+
+.brand-logo-img {
+  width: 100%;
+  height: auto;
+  max-width: 60px;
+  object-fit: cover;
 }
 
 /* Brand Logo */
 .brand-logo-img {
-  width: 100%; /* Ensures the logo fills the container */
-  height: 100%;
-  object-fit: cover; /* Keeps the aspect ratio of the logo */
+  width: 100%;
+  height: auto;
+  max-width: 60px;
+  object-fit: cover;
 }
 
+/* Ensure the link doesn't have default styling */
+.brand-logo a {
+  text-decoration: none;
+  color: inherit;
+}
 
 .navbar {
   display: flex;
@@ -283,24 +304,27 @@ header {
 }
 
 .hero {
-  /* Remove margin-left and use auto margins for horizontal centering */
   margin: 0 auto;
   text-align: center;
-  padding: 100px 20px;
+  /* Remove fixed padding */
+  padding: 0 20px;
   max-width: 800px;
   height: 100vh;
-  /* Use flexbox for vertical and horizontal centering */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center; /* Centers content vertically */
   align-items: center;
-  /* Remove margin-top */
+  /* Add a minimum height to ensure proper spacing */
+  min-height: 600px;
+  /* Optional: adjust for header height if needed */
+  height: calc(100vh - 70px); /* Subtract header height */
 }
 
+/* Adjust spacing between elements */
 .hero .name {
   font-size: 14px;
   letter-spacing: 3px;
-  margin-bottom: 10px;
+  margin-bottom: 20px; /* Increased spacing */
   text-transform: uppercase;
 }
 
@@ -310,7 +334,7 @@ header {
   font-size: 48px;
   font-weight: bold;
   line-height: 1.3;
-  margin: 0 0 20px;
+  margin: 0 0 30px; /* Increased bottom margin */
 }
 
 .hero h1 .highlight {
@@ -323,7 +347,7 @@ header {
   font-size: 20px;
   font-weight: 400;
   line-height: 1.6;
-  margin-bottom: -20px;
+  margin-bottom: 30px; /* Adjusted from negative to positive */
 }
 
 .hero h2 .highlight {
@@ -450,7 +474,7 @@ header {
 .card {
   width: 240px;
   height: 400px;
-  background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */  border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
@@ -888,7 +912,7 @@ section.gamer-card {
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-image:url('Untitled\ design\ \(10\).png');
+  /* background-image:url('Untitled\ design\ \(10\).png'); */
   color: white;
 }
 
