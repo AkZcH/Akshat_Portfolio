@@ -15,12 +15,16 @@ body {
 
 /* ABOUT SECTION */
 .about-container {
-    min-height: 100vh;
+    min-height: calc(100vh - 80px); /* Subtract header height */
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto;
-    gap: 4rem; /* Added gap between content and image */
+    margin: 30px auto 0; /* Added top margin to account for header */
+    gap: 4rem;
+    width: 90%;
+    max-width: 1100px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .about-content {
@@ -170,11 +174,8 @@ p {
     text-align: left;
 }
 
-.about-content h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #00bfff;
-    margin-bottom: 10px;
+.bio-section .about-content h1 {
+    margin-bottom: 0.5rem; /* Add small margin to heading */
 }
 
 .about-heading {
@@ -197,8 +198,10 @@ p {
 /* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     .about-container {
+        min-height: calc(100vh - 60px); /* Adjust for smaller header on mobile */
+        margin-top: 60px; /* Smaller margin on mobile */
         flex-direction: column;
-        gap: 2rem; /* Smaller gap for mobile */
+        gap: 2rem;
     }
 
     .about-content {
@@ -521,4 +524,12 @@ html, body {
         width: 95%; /* Slightly wider on mobile */
         padding: 15px;
     }
+}
+
+.tagline {
+    font-style: italic;
+    text-align: right;
+    margin-top: 0; /* Remove top margin */
+    margin-bottom: 2rem;
+    opacity: 0.8;
 }
