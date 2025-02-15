@@ -5,8 +5,8 @@ const experiences = {
         date: "August 2023 - Present",
         location: "Bhubaneshwar, Odisha, India",
         responsibilities: [
-            "✔ White Labeled NextGen LMS",
-            "✔ Platform for educators and creators"
+            "✔ Conducted hackathons on AI/ML",
+            "✔ Member of various Tech Clubs"
         ]
     },
     dimension: {

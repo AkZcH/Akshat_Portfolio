@@ -11,18 +11,16 @@ body {
     justify-content: center;
     min-height: 100vh; /* Changed to min-height for better responsiveness */
     flex-direction: column; /* Stacks content vertically */
-    padding-top: 80px; /* Adjust this value based on your header height */
 }
 
 /* ABOUT SECTION */
 .about-container {
+    min-height: 100vh;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    width: 90%;
-    max-width: 1100px;
-    gap: 40px;
     margin: 0 auto;
+    gap: 4rem; /* Added gap between content and image */
 }
 
 .about-content {
@@ -200,10 +198,7 @@ p {
 @media (max-width: 768px) {
     .about-container {
         flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 60px 20px;
-        gap: 20px;
+        gap: 2rem; /* Smaller gap for mobile */
     }
 
     .about-content {
@@ -263,18 +258,17 @@ p {
 
 /* Brand Logo Styles */
 .header {
-    position: fixed;
+    position: absolute;
     top: 0;
-    left: 0;
     width: 100%;
-    padding: 1rem;
-    z-index: 1000;
+    /* padding: 1rem; */
+    box-sizing: border-box;
 }
 
 .brand-logo {
     display: flex;
     align-items: center;
-    padding-left: 2rem;
+    padding-left: 20px; /* Reduced padding to move logo more to the corner */
 }
 
 .brand-logo-container {
@@ -289,7 +283,7 @@ p {
     transition: transform 0.3s ease;
     box-shadow: 0 0 0 rgba(255, 165, 0, 0);
     cursor: pointer;
-    margin-top: 1rem;
+    margin-top: 0.5rem; /* Reduced from 1rem to 0.5rem */
 }
 
 .brand-logo-container:hover {
@@ -500,4 +494,31 @@ ul li {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+}
+
+/* Prevent horizontal scroll */
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Adjust container widths */
+.about-container,
+.bio-section,
+.education-section,
+.work-experience-section {
+    width: 90%;
+    max-width: 1100px;
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+@media (max-width: 768px) {
+    .about-container,
+    .bio-section,
+    .education-section,
+    .work-experience-section {
+        width: 95%; /* Slightly wider on mobile */
+        padding: 15px;
+    }
 }
