@@ -230,3 +230,43 @@ function updateWorkExperienceContent(company) {
         </ul>
     `;
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const resumeButton = document.querySelector('.futuristic-button');
+    const modal = document.getElementById('resumeModal');
+    const closeButton = document.querySelector('.close-button');
+    const resumeViewer = document.getElementById('resumeViewer');
+    
+    // Replace this URL with the actual path to your resume PDF
+    const resumeURL = 'resume.pdf';
+    
+    resumeButton.addEventListener('click', function() {
+        modal.style.display = 'block';
+        resumeViewer.src = resumeURL;
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
+    });
+    
+    closeButton.addEventListener('click', function() {
+        modal.style.display = 'none';
+        resumeViewer.src = '';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    });
+    
+    // Close modal when clicking outside the content
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            resumeViewer.src = '';
+            document.body.style.overflow = 'auto';
+        }
+    });
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.style.display === 'block') {
+            modal.style.display = 'none';
+            resumeViewer.src = '';
+            document.body.style.overflow = 'auto';
+        }
+    });
+});

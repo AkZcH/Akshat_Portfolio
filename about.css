@@ -454,6 +454,9 @@ ul li {
     background-color: #000;
     width: 90%;
     text-align: right; /* Right align the section */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Aligns content to the right */
 }
 
 .work-experience-section h2 {
@@ -565,4 +568,182 @@ html, body {
     margin-top: 0; /* Remove top margin */
     margin-bottom: 2rem;
     opacity: 0.8;
+}
+
+/* Futuristic Button Styles */
+.futuristic-button {
+    background: linear-gradient(45deg, #00bfff, #00bfff);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.3);
+}
+
+.futuristic-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.5);
+}
+
+.futuristic-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: all 0.5s ease;
+}
+
+.futuristic-button:hover:before {
+    left: 100%;
+}
+
+/* Add to work experience section */
+.work-experience-section .button-container {
+    text-align: right;
+}
+
+/* Resume Modal Styles */
+.resume-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    width: 90%;
+    height: 90%;
+    margin: 2% auto;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.3);
+}
+
+.resume-viewer {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
+.close-button {
+    position: absolute;
+    right: -40px;
+    top: 0;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-button:hover {
+    color: #00bfff;
+}
+
+.beyond-code {
+    background: #000000; /* Match the page background */
+    padding: 60px 20px;
+    color: white;
+    text-align: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.beyond-code .container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.beyond-code h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.beyond-code .tagline {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: gray;
+    margin-bottom: 30px;
+    text-align: right;
+    margin-right: 5rem;
+}
+
+.beyond-code .content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.beyond-code .text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.beyond-code .text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.beyond-code .highlight {
+    color: #00bfff; /* Match the highlight color used throughout the page */
+}
+
+.beyond-code .image-container {
+    flex: 1;
+    min-width: 200px;
+}
+
+.beyond-code .image-container img {
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(62, 61, 61, 0.7);
+    transition: transform 0.3s ease;
+}
+
+.beyond-code .image-container img:hover {
+    transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .beyond-code .content {
+        flex-direction: column;
+    }
+
+    .beyond-code .text,
+    .beyond-code .image-container {
+        width: 100%;
+    }
+
+    .beyond-code .tagline {
+        margin-right: 0;
+        text-align: center;
+    }
 }
