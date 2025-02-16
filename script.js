@@ -1,3 +1,5 @@
+console.log("Script loaded");
+
 const carousel = document.getElementById('carousel');
 const cards = document.querySelectorAll('.card');
 const leftArrow = document.getElementById('left-arrow');
@@ -143,3 +145,112 @@ buttons.forEach(button => {
 document.addEventListener('DOMContentLoaded', () => {
   updateExperience('teachyst');
 });
+
+
+// Function to animate the numbers
+function animateNumber(element, target) {
+  let current = 0;
+  const increment = target / 100; // Adjust speed here
+  const interval = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      clearInterval(interval);
+      current = target;
+    }
+    element.textContent = Math.floor(current);
+  }, 20); // Adjust interval for smoother/faster animation
+}
+
+// Get all progress numbers and animate them
+document.querySelectorAll('.progress-number').forEach((element) => {
+  const target = parseInt(element.getAttribute('data-target'), 10);
+  animateNumber(element, target);
+});
+
+// Define the animation functions first
+function animateValue(element, start, end, duration) {
+  console.log("Starting animation for element:", element, "from", start, "to", end);
+  let startTimestamp = null;
+  const step = (timestamp) => {
+    if (!startTimestamp) startTimestamp = timestamp;
+    const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+    const currentValue = Math.floor(progress * (end - start) + start);
+    element.textContent = currentValue;
+    if (progress < 1) {
+      window.requestAnimationFrame(step);
+    }
+  };
+  window.requestAnimationFrame(step);
+}
+
+// Create the observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const target = parseInt(entry.target.getAttribute('data-target'));
+      console.log("Starting animation with target:", target);
+      animateValue(entry.target, 0, target, 2000);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+// Wait for DOM to be fully loaded before accessing elements
+document.addEventListener('DOMContentLoaded', () => {
+  console.log("DOM Content Loaded");
+  
+  // Initialize progress numbers
+  const progressNumbers = document.querySelectorAll('.progress-number');
+  console.log("Found progress numbers:", progressNumbers.length);
+  
+  progressNumbers.forEach((el) => {
+    console.log("Observing element with target:", el.getAttribute('data-target'));
+    observer.observe(el);
+  });
+
+  // Initialize other elements and event listeners here
+  // ... rest of your initialization code ...
+});
+
+// Wait for the document to be fully loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeStats);
+} else {
+    initializeStats();
+}
+
+function initializeStats() {
+    const animateStats = () => {
+        const stats = document.querySelectorAll('.stat-number');
+        
+        stats.forEach(stat => {
+            const targetValue = parseInt(stat.getAttribute('data-value'));
+            let currentValue = 0;
+            const duration = 2000; // 2 seconds
+            const increment = targetValue / (duration / 16); // 60 FPS
+
+            const updateValue = () => {
+                currentValue = Math.min(currentValue + increment, targetValue);
+                stat.textContent = Math.round(currentValue);
+                
+                if (currentValue < targetValue) {
+                    requestAnimationFrame(updateValue);
+                }
+            };
+
+            // Create intersection observer
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        requestAnimationFrame(updateValue);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            observer.observe(stat);
+        });
+    };
+
+    animateStats();
+}

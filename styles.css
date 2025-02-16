@@ -306,18 +306,15 @@ header {
 .hero {
   margin: 0 auto;
   text-align: center;
-  /* Remove fixed padding */
   padding: 0 20px;
   max-width: 800px;
-  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centers content vertically */
+  justify-content: center;
   align-items: center;
-  /* Add a minimum height to ensure proper spacing */
   min-height: 600px;
-  /* Optional: adjust for header height if needed */
-  height: calc(100vh - 70px); /* Subtract header height */
+  margin-top: -10px;
+  height: calc(100vh - 170px);
 }
 
 /* Adjust spacing between elements */
@@ -420,9 +417,8 @@ header {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-top: 30px;
   margin-bottom: 10px;
-
+ 
 }
 
 .social-logo svg {
@@ -1026,4 +1022,83 @@ html, body {
 img {
   max-width: 100%;
   height: auto;
+}
+
+.progress-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: -50px;
+  background: rgba(255, 255, 255, 0.1); /* Optional: adds subtle background */
+}
+
+.progress-item {
+  text-align: center;
+}
+
+.progress-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffffff; /* Changed to white */
+  margin: 0;
+  background: linear-gradient(180deg, #ff6a00, #ee0979); /* Optional: matches your theme */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.progress-item p {
+  font-size: 1.2rem;
+  color: #ffffff; /* Changed to white */
+  margin: 5px 0 0;
+  opacity: 0.8; /* Makes it slightly less bright than the numbers */
+}
+
+.stats-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+    padding: 30px;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.stat-item {
+    text-align: center;
+    padding: 0 20px;
+}
+
+.stat-number {
+    display: block;
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    background: linear-gradient(180deg, #ff6a00, #ee0979);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Chakra Petch', sans-serif;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: #ffffff;
+    opacity: 0.8;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+@media (max-width: 768px) {
+    .stats-section {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .stat-number {
+        font-size: 2.5rem;
+    }
 }

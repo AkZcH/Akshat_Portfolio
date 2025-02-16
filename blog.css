@@ -23,10 +23,15 @@ body {
 }
 
 .hero-overlay {
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent overlay for better text visibility */
-    margin-top: -10px;
+    background-color: rgba(0, 0, 0, 0.8); /* Changed from 0.8 to 1 for complete opacity */
+    padding: 40px 20px; /* Added padding for better spacing */
+    margin-top: 0; /* Removed negative margin */
     text-align: center;
     width: 100%;
+    height: 100%; /* Added to ensure full coverage */
+    display: flex; /* Added for better content alignment */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
 }
 
 .hero-title {

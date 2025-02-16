@@ -41,9 +41,9 @@ const experiences = {
 // Work Experience data
 const workExperiences = {
     google: {
-        position: "Software Engineer Intern <span class='highlight'>@Google</span>",
-        date: "May 2023 - Aug 2023",
-        location: "Mountain View, CA",
+        position: "Growth and AI/ML Member <span class='highlight'>@Google Developer Groups KIIT</span>",
+        date: "February 2025 - Present",
+        location: "Bhubaneshwar, Odisha, India",
         responsibilities: [
             "✔ Developed and optimized backend services for Google Cloud Platform",
             "✔ Implemented machine learning models for data analysis",
@@ -51,9 +51,9 @@ const workExperiences = {
         ]
     },
     microsoft: {
-        position: "Frontend Developer <span class='highlight'>@Microsoft</span>",
-        date: "Jan 2023 - Apr 2023",
-        location: "Redmond, WA",
+        position: "AI/ML Member <span class='highlight'>@GFG KIIT</span>",
+        date: "February 2025 - Present",
+        location: "Bhubaneshwar, Odisha, India",
         responsibilities: [
             "✔ Built responsive web applications using React and TypeScript",
             "✔ Improved application performance by 40%",

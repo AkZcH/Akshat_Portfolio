@@ -152,6 +152,36 @@ p {
     box-sizing: border-box;
 }
 
+/* Responsive design for bio section */
+@media (max-width: 768px) {
+    .bio-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 5%;
+    }
+
+    .bio-image-container {
+        flex: 0 1 100%;
+        order: 1; /* Places image at top */
+        margin-top: 0;
+        margin-bottom: 2rem;
+    }
+
+    .bio-section .about-content {
+        flex: 1;
+        max-width: 100%;
+        order: 2; /* Places content below image */
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .bio-image-container img {
+        max-width: 240px; /* Slightly smaller image on mobile */
+        margin: 0 auto;
+        display: block;
+    }
+}
+
 /* IMAGE STYLING */
 .bio-image-container {
     flex: 0 1 30%;
@@ -274,7 +304,7 @@ p {
 .brand-logo {
     display: flex;
     align-items: center;
-    padding-left: 20px; /* Reduced padding to move logo more to the corner */
+    padding-left: 20px; 
 }
 
 .brand-logo-container {
