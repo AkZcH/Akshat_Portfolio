@@ -162,21 +162,22 @@ p {
 
     .bio-image-container {
         flex: 0 1 100%;
-        order: 1; /* Places image at top */
+        order: 1;
         margin-top: 0;
         margin-bottom: 2rem;
     }
 
     .bio-section .about-content {
         flex: 1;
-        max-width: 100%;
-        order: 2; /* Places content below image */
+        max-width: 100% !important; /* Override the desktop max-width */
+        order: 2;
         margin-left: 0;
-        text-align: center;
+        text-align: left;        width: 100%; /* Ensure full width */
+        padding: 0; /* Remove any padding that might affect width */
     }
 
     .bio-image-container img {
-        max-width: 240px; /* Slightly smaller image on mobile */
+        max-width: 240px;
         margin: 0 auto;
         display: block;
     }
@@ -204,7 +205,7 @@ p {
     max-width: 65%;
     order: 2;
     text-align: left;
-    margin-left: 20px;
+    margin-left: 0;
 }
 
 .bio-section .about-content h1 {
@@ -709,6 +710,7 @@ html, body {
     line-height: 1.6;
     margin-bottom: 15px;
     color: white;
+    font-style: italic;
 }
 
 .beyond-code .highlight {
@@ -746,4 +748,101 @@ html, body {
         margin-right: 0;
         text-align: center;
     }
+}
+
+.life-beyond-code {
+    text-align: center;
+    padding: 40px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.music-player {
+    margin: 30px 0 25px 0;  /* Reduced bottom margin from 50px to 25px */
+    width: 100%;
+    background-color: transparent;
+    
+}
+
+.music-player h1 {
+    font-weight: 600;
+}
+
+.music-player iframe {
+    width: 100%;
+    max-width: 100%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr 1fr; /* Different widths for each card */
+    gap: 10px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.grid-item {
+    background: #222;
+    border: 2px solid rgba(255, 255, 255, 0.2); 
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    height: 280px;
+    position: relative;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 240px; /* Fixed height for images */
+    object-fit: cover;
+    display: block; /* Remove any default spacing */
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove any padding */
+}
+
+.grid-item p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 10px;
+    background: rgba(34, 34, 34, 0.9); /* Semi-transparent background */
+    color: white;
+}
+
+.grid-item:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .life-beyond-code {
+        padding: 20px;
+    }
+    
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack cards on mobile */
+    }
+    
+    .grid-item {
+        height: 280px; /* Maintain consistent height */
+    }
+}
+
+.music-player-title{
+    color:#1db954
+}
+
+.grid-item.music-card {
+    background: linear-gradient(180deg, #535353, #212121); /* Added linear gradient */
+    border: 2px solid rgba(29,185,84); 
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    height: 280px;
+    position: relative;
 }
