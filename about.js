@@ -270,3 +270,31 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll("img");
+    let loadedImages = 0;
+
+    images.forEach(img => {
+        if (img.complete) {
+            loadedImages++; // If already loaded
+        } else {
+            img.onload = () => {
+                loadedImages++;
+                checkAllImagesLoaded();
+            };
+            img.onerror = () => {
+                loadedImages++; // Count even if there's an error
+                checkAllImagesLoaded();
+            };
+        }
+    });
+
+    function checkAllImagesLoaded() {
+        if (loadedImages === images.length) {
+            document.body.style.display = "block"; // Show page when all images are loaded
+        }
+    }
+
+    checkAllImagesLoaded(); // In case all images are already loaded
+});
