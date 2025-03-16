@@ -101,7 +101,7 @@
 </main>
       <!-- ------------------------------About me------------------------------ -->
        
-  <section id="portfolio" class="About Us tech">
+  <section id="portfolio" class="About Us tech fade-in">
     <div class="tech-stack-section">
         <h1 class="Service-Heading">// What I Do</h1>
         <div class="tech-stack-container">
@@ -211,7 +211,7 @@
     </div>
 </section>
 <!------------------------------------------------------------ Projects ------------------------------------------------------------>
-  <section id="portfolio" class="About Us">
+  <section id="portfolio" class="About Us fade-in">
     <div class="tech-stack-section">
         <h1 class="Project-Heading">// My Projects</h1>
         <div class="tech-stack-container">
@@ -274,7 +274,7 @@
     </div>
 </section>
 
-<section class="extra-stuff-section">
+<section class="extra-stuff-section fade-in">
     <h1 class="extra-section-title">Some extra stuff</h1>
     <div class="cards-container">
         <!-- Extra Card 1 -->
@@ -326,7 +326,7 @@
     </div>
 </section>
 
-<section class="other-side-section">
+<section class="other-side-section fade-in">
     <h1 class="extra-section-title">But there's more to me than just tech!</h1>
     <p>Click below to see my other side.</p>
     <a href="game.html"> <button id="explore-btn">Explore My Other Side</button></a>
@@ -408,5 +408,30 @@
   
   <script src="script.js"></script>
   <script src="stats.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const sections = document.querySelectorAll('.fade-in');
+
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target); // Stop observing after the first time
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Fade in the body on load
+        document.body.style.opacity = 1;
+    });
+  </script>
 </body>
 </html>
