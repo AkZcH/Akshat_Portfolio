@@ -3,21 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valorant - TheFallenMaple</title>
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Rajdhani:wght@300;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="valorant.css">
+  <title>OneAutumnLeaf</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="brand logo.png">
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in-forward {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 2s ease-out, transform 2s ease-out;
+    }
+    .fade-in-forward.show {
+      opacity: 1;
+      transform: translateY(0) translateX(0);
+    }
+    .hover-glow:hover {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+      transform: scale(1.05);
+      transition: all 0.3s ease-in-out;
+    }
+    .loader {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: #121212;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+    .loader div {
+      width: 50px;
+      height: 50px;
+      border: 5px solid #fff;
+      border-top-color: transparent;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
 </head>
 <body>
-  <section class="gamer-card">
-    <div class="card-content">
-      <img src="cfae886e263126f685510e2f45b82970.jpg" alt="Valorant Logo" class="game-logo">
-      <h1>Valorant</h1>
-      <p><strong>Alias:</strong> TheFallenMaple</p>
-      <p><strong>Current Rank:</strong> Platinum 2</p>
-      <p><strong>Top 3 Agents:</strong> Jett, Phoenix, Reyna</p>
-      <p><strong>Days Since Playing:</strong> 450+</p>
-      <p><strong>Playstyle:</strong> Duelist/Entry Fragger</p>
+  <div class="loader"><div></div></div>
+  <header class="header fade-in">
+    <div class="brand-logo">
+      <img src="brand logo.png" alt="Brand Logo" class="brand-logo-img hover-glow">
     </div>
-  </section>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="blog.html" class="hover-glow">Blogs</a></li>
+        <li><a href="about.html" class="hover-glow">About Me</a></li>
+        <li><a href="#" onclick="scrollToPortfolio()" class="hover-glow">Portfolio</a></li>
+        <li><a href="store/store.html" class="hover-glow">Store</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="hero fade-in-forward">
+    <h1>AKSHAT CHAUHAN</h1>
+    <h2>AI Visionary & Problem Solver</h2>
+    <button class="futuristic-button hover-glow">About Me</button>
+  </main>
+  <script>
+    window.onload = function() {
+      document.body.style.opacity = "1";
+      document.querySelectorAll(".fade-in, .fade-in-forward").forEach(el => el.classList.add("show"));
+      setTimeout(() => document.querySelector(".loader").style.display = "none", 1000);
+    };
+  </script>
 </body>
 </html>

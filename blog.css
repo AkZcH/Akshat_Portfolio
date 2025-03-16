@@ -248,3 +248,43 @@ a {
     color: #cccccc;
     line-height: 1.6;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 36px;
+        margin-top: 80px;
+    }
+    .hero-subtitle {
+        font-size: 16px;
+    }
+    .hero-description {
+        font-size: 14px;
+    }
+    .about-text h2 {
+        font-size: 28px;
+    }
+    .section-title {
+        font-size: 48px;
+    }
+
+    .blog-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centers the blog cards */
+    }
+
+    .blog-card {
+        width: 70%; /* Adjust width to fit better on smaller screens */
+        max-width: 400px; /* Optional: set a max width */
+        margin-bottom: 20px; /* Space between cards */
+    }
+
+    .blog-image {
+        height: 120px;
+    }
+    .blog-content {
+        padding: 8px;
+    }
+}
+

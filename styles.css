@@ -24,6 +24,7 @@ body {
   background-position: center;
   overflow-x: hidden; 
   background-attachment: fixed; 
+  
 }
 
 .header {
@@ -1093,7 +1094,6 @@ img {
     max-width: 800px;
     padding: 30px;
     border-radius: 15px;
-    backdrop-filter: blur(10px);
 }
 
 .stat-item {

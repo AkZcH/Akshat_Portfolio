@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pro Gamer Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">PROWESS</div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Home</a>
+            <a href="about.html">About</a>
+            <a href="games.html">Games & Stats</a>
+            <a href="settings.html">Settings</a>
+            <a href="gear.html">Gaming Gear</a>
+            <a href="highlights.html">Highlights</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <button class="theme-toggle">
+            <span class="theme-toggle-icon">🌙</span>
+        </button>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="animated-text">
+                    <span>DOMINATE.</span>
+                    <span>COMPETE.</span>
+                    <span>CONQUER.</span>
+                </h1>
+                <p class="hero-subtitle">Professional eSports Player</p>
+                <a href="about.html" class="cta-button">View Portfolio</a>
+            </div>
+            <div class="hero-overlay"></div>
+        </section>
+
+        <section class="live-stats">
+            <h2>Live Statistics</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Current Rank</h3>
+                    <div class="stat-value" id="currentRank">Global Elite</div>
+                </div>
+                <div class="stat-card">
+                    <h3>K/D Ratio</h3>
+                    <div class="stat-value" id="kdRatio">2.45</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Win Rate</h3>
+                    <div class="stat-value" id="winRate">68%</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Headshot %</h3>
+                    <div class="stat-value" id="headshotPercentage">62.3%</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="tournament-results">
+            <h2>Latest Tournament Results</h2>
+            <div class="tournament-ticker" id="tournamentTicker">
+                <!-- Tournament results will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <section class="featured-clips">
+            <h2>Featured Highlights</h2>
+            <div class="clips-grid">
+                <div class="clip-card">
+                    <div class="clip-placeholder">
+                        <span>Loading Clip...</span>
+                    </div>
+                    <h3>Ace Clutch - Tournament Finals</h3>
+                </div>
+                <div class="clip-card">
+                    <div class="clip-placeholder">
+                        <span>Loading Clip...</span>
+                    </div>
+                    <h3>Insane Flick Shot</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-feed">
+            <h2>Social Media</h2>
+            <div class="social-grid">
+                <a href="#" class="social-link twitter">
+                    <i class="social-icon">🐦</i>
+                    <span>Twitter</span>
+                </a>
+                <a href="#" class="social-link twitch">
+                    <i class="social-icon">📺</i>
+                    <span>Twitch</span>
+                </a>
+                <a href="#" class="social-link youtube">
+                    <i class="social-icon">📹</i>
+                    <span>YouTube</span>
+                </a>
+                <a href="#" class="social-link discord">
+                    <i class="social-icon">💬</i>
+                    <span>Discord</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Pro Gamer Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
