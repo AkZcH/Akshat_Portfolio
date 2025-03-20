@@ -802,7 +802,6 @@ section.gamer-card {
 }
 
 /* Footer Styling */
-/* Footer Styling */
 .footer {
   background: linear-gradient(180deg, #000, #000, #222);
   color: #fff;
@@ -813,20 +812,22 @@ section.gamer-card {
 .footer-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between; /* Distribute space between sections */
   max-width: 1200px;
   margin: 0 auto;
+  padding: 20px 0;
+  gap: 40px;
 }
 
 .footer-section {
   flex: 1;
   min-width: 250px;
   margin: 20px;
+  text-align: left; /* Align text to the left */
 }
 
 .footer-brand {
   text-align: center;
-
 }
 
 .footer-logo-img {
@@ -835,21 +836,16 @@ section.gamer-card {
   border-radius: 50%;
 }
 
-.footer-tagline {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 5px;
-}
-
 .footer-description {
   font-size: 0.9rem;
   opacity: 0.8;
 }
 
-.footer-title {
+.footer-title, .footer-title-connect {
   font-size: 1.3rem;
   margin-bottom: 15px;
   position: relative;
+  text-align: left; /* Align title text to the left */
 }
 
 .footer-title::after {
@@ -857,19 +853,16 @@ section.gamer-card {
   display: block;
   width: 50px;
   height: 3px;
-  background: linear-gradient(180deg, #ff6a00, #ee0979); /* Optional: matches your theme */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: linear-gradient(180deg, #ff6a00, #ee0979);
   margin-top: 5px;
 }
 
 .footer-list {
   list-style: none;
   padding: 0;
-}
-
-.footer-list li {
-  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column; /* Stack links vertically */
+  gap: 10px;
 }
 
 .footer-list a {
@@ -879,10 +872,15 @@ section.gamer-card {
 }
 
 .footer-list a:hover {
-  background: linear-gradient(180deg, #ff6a00, #ee0979); /* Optional: matches your theme */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: color 0.3s;
+  color: #00bfff;
+  transform: scale(1.1);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align contact info to the left */
+  gap: 10px;
 }
 
 .contact-info p {
@@ -900,6 +898,7 @@ section.gamer-card {
 .social-links-footer {
   display: flex;
   gap: 15px;
+  justify-content: flex-start; /* Align social icons to the left */
 }
 
 .social-links-footer a {
@@ -925,12 +924,16 @@ section.gamer-card {
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer-container {
-      flex-direction: column;
-      text-align: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-section {
+    text-align: center; /* Center text on smaller screens */
   }
 
   .social-links-footer {
-      justify-content: center;
+    justify-content: center;
   }
 }
 
