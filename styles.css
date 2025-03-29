@@ -802,6 +802,7 @@ section.gamer-card {
 }
 
 /* Footer Styling */
+/* Footer Styling */
 .footer {
   background: linear-gradient(180deg, #000, #000, #222);
   color: #fff;
@@ -812,22 +813,20 @@ section.gamer-card {
 .footer-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between; /* Distribute space between sections */
+  justify-content: space-around;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px 0;
-  gap: 40px;
 }
 
 .footer-section {
   flex: 1;
   min-width: 250px;
   margin: 20px;
-  text-align: left; /* Align text to the left */
 }
 
 .footer-brand {
   text-align: center;
+
 }
 
 .footer-logo-img {
@@ -836,16 +835,21 @@ section.gamer-card {
   border-radius: 50%;
 }
 
+.footer-tagline {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
 .footer-description {
   font-size: 0.9rem;
   opacity: 0.8;
 }
 
-.footer-title, .footer-title-connect {
+.footer-title {
   font-size: 1.3rem;
   margin-bottom: 15px;
   position: relative;
-  text-align: left; /* Align title text to the left */
 }
 
 .footer-title::after {
@@ -853,16 +857,22 @@ section.gamer-card {
   display: block;
   width: 50px;
   height: 3px;
-  background: linear-gradient(180deg, #ff6a00, #ee0979);
+  background: linear-gradient(180deg, #ff6a00, #ee0979); /* Optional: matches your theme */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-top: 5px;
 }
 
 .footer-list {
   list-style: none;
   padding: 0;
-  display: flex;
-  flex-direction: column; /* Stack links vertically */
-  gap: 10px;
+  display: flex; /* Use flexbox for horizontal layout */
+  gap: 20px; /* Add space between the links */
+  justify-content: center; /* Center the links horizontally */
+}
+
+.footer-list li {
+  margin: 0; /* Remove any default margin */
 }
 
 .footer-list a {
@@ -872,14 +882,16 @@ section.gamer-card {
 }
 
 .footer-list a:hover {
-  color: #00bfff;
-  transform: scale(1.1);
+  background: linear-gradient(180deg, #ff6a00, #ee0979); /* Optional: matches your theme */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: color 0.3s;
 }
 
 .contact-info {
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align contact info to the left */
+  align-items: flex-start; /* Align items to the start for better readability */
   gap: 10px;
 }
 
@@ -895,21 +907,37 @@ section.gamer-card {
   color: #00bfff;
 }
 
+.footer-section.footer-social {
+    text-align: right; /* Align the entire section to the right */
+}
+
+.footer-section.footer-social .footer-title {
+    text-align: right; /* Align the title to the right */
+    margin-right: 15px; /* Add some margin to align with the icons */
+}
+
+.footer-section.footer-social .footer-title::after {
+    margin-left: auto; /* Move the underline gradient to the right */
+    margin-right: 0;
+}
+
 .social-links-footer {
-  display: flex;
-  gap: 15px;
-  justify-content: flex-start; /* Align social icons to the left */
+    display: flex;
+    gap: 20px; /* Increase space between icons */
+    justify-content: flex-end;
+    margin-top: 10px; /* Add some space below the "Connect" title */
 }
 
 .social-links-footer a {
-  color: #bbb;
-  font-size: 1.5rem;
-  transition: transform 0.3s ease, color 0.3s ease;
+    color: white; /* Make icons white */
+    font-size: 1.5rem; /* Increase icon size */
+    text-decoration: none; /* Remove underline from links */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
 .social-links-footer a:hover {
-  color: #00bfff;
-  transform: scale(1.2);
+    color: #00bfff; /* Light blue color on hover */
+    transform: translateY(-3px); /* Slight upward movement on hover */
 }
 
 .footer-bottom {
@@ -924,16 +952,12 @@ section.gamer-card {
 /* Responsive Design */
 @media (max-width: 768px) {
   .footer-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .footer-section {
-    text-align: center; /* Center text on smaller screens */
+      flex-direction: column;
+      text-align: center;
   }
 
   .social-links-footer {
-    justify-content: center;
+      justify-content: center;
   }
 }
 
